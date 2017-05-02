@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+ 
+{% block title %}Recognition{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="static/css/mediaUpload.css" type="text/css"/>
+	<script type="text/javascript" src="static/script/mediaFile.js"></script>
+	<script type="text/javascript" src="static/script/mediaUpload.js"></script>
+	<script type="text/javascript" src="static/script/allUpload.js"></script>
+	<script type="text/javascript" src="static/script/filelist.js"></script>
+	<script type="text/javascript" src="static/script/jPages.js"></script>
+	
+{% endblock %}
+{% block nav_filelist %}<a href="/filelist" style="background:#505050">filelist</a>{% endblock %}
+{% block content %}
+<style>
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+</style>
+<!--div id="allupload" class="mediaupload">
+<h2>File Upload</h2></div-->
+<div class="user_main_div">
+<h2>File List<br></h2>
+	<div style="display:block;height:50px;">
+	 <br>
+    	<div class="holder"></div>
+        <select style="float:right;font-size:14px;padding: 1px;">
+          <option selected>5</option>
+          <option>10</option>
+          <option>15</option>
+        </select>
+        
+        <label style="float:right ;font-size:15px;">items per page:&nbsp;</label>
+    </div>
+    <br>
+    <ul class="filelistul" id="filelistul">
+    </ul>
+    
+    <div style="display:block;height:50px;"><br>
+    	<div class="holder"></div>
+    </div>   
+</div>
+
+<!-- div class="playBox" id="playEncodeInfoBox" style="display:none;">
+	<div  id="encodeinfotext"></div>
+	<input type="button" title="Close" id="closeplaywindow" value="" onclick="closeEncodeInfoWindow();"></input>
+</div>
+
+<div class="playvideomask" style="opacity: 0.8;"></div> -->
+{% endblock %}

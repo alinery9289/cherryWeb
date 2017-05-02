@@ -1,0 +1,70 @@
+@charset "utf-8";
+.leadinglist{margin-left:8%;}
+.leadinglist ul{list-style-type:none;margin:0;padding:0;overflow:hidden;}
+.leadinglist li{float:left;}
+.leadinglist a:link,a:visited{display:block;height:24px;font-family: "微软雅黑", "Microsoft YaHei", "宋体";color:#ddd;font-size:16px;background:#323436;text-align:center;padding:13px;text-decoration:none;text-transform:uppercase;-webkit-transition:all 0.3s linear;-moz-transition:all 0.3s linear;-o-transition:all 0.3s linear;transition:background 0.3s linear;}
+.leadinglist a:hover,a:active{background:#606060; color:#fff; }
+.videodiv{position:absolute;top:230px;width:1138px;height:307px;left:50%;margin-left:-569px;background:url(../images/VideoComputer.png);}
+.downloadlink{position:absolute;width:100%;margin:auto;top:180px;display:none;text-align:center;font-size:14px;}
+.downloadlink a{color:#778899;transition:color 0.3s linear;}
+.downloadlink a:hover{color:#FF7240;}
+.downloadlink a:active{background:none;}
+#playButton{ width:60px; height:60px;border-radius: 30px; border:none;background:#b0c4de;line-height:30px;text-align:center; color:#fff;font-size:16px;font-family: "微软雅黑", "Microsoft YaHei UI", "宋体";
+transition:background 0.2s linear;}
+#frgetpw{color:#000;transition:all 0.2s linear;}
+#frgetpw:hover{color:#FF7240;}
+#playButton:hover{ background:#778899;} 
+#playButton:active{background:#2f4f4f; }
+.videoplaycenter{position:absolute;top:120px;width:60px; height:60px;left:539px;}
+.thisvideo{position:absolute;top:18px;width:409px; height:260px;left:76px;}
+.thisvideo2{position:absolute;top:18px;width:409px; height:260px;left:653px;}
+.textvideodiv{position:absolute;top:540px;width:780px; height:30px;left:50%; margin-left:-390px; font-family: "微软雅黑", "Microsoft YaHei UI", "宋体";font-weight:500;font-size:16px;color: #444;}
+#videotxt1{position:absolute;left:26px;}
+#videotxt2{position:absolute;left:623px;}
+#downloadvideo{position: absolute;left:50%; margin-left:360px; width: 200px;top: 556px;font-size: 15px;font-family: "微软雅黑", "Microsoft YaHei UI", "宋体";color: #fff;text-decoration: underline;font-style: italic;}
+#downloadvideo:hover{color:#CC0;}
+
+.user_main_div{ display: block;position: relative;margin-left: auto;margin-right: auto;width: 850px;top: 20px;float: center;border: 0px solid #DDD;border-radius: 4px;overflow: hidden;}
+.filelistul{list-style: none;display: block;padding: 0px;}
+.filelistul li {display: inline-block;padding: 10px 15px 10px 15px;margin: 7px 0px;background-color: white;border-radius: 0px;border: 1px solid #DDD;position: relative;}
+.filelistul li:hover{border: 1px solid #DDD;box-shadow:2px 4px 3px #C0C0C0;}
+.filelistimg{width:64px;height:64px;display: block;float:left;cursor:pointer;}
+.filelistname {  padding: 8px 30px;margin-right:0px;width: 450px;height: 15px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;display: inline-block;vertical-align: middle;}
+.filelistname a{cursor: auto;  outline: 0;color: #707070;text-decoration: none;transition:all 0.2s linear;-webkit-transition:all 0.2s linear;-moz-transition:all 0.2s linear;-o-transition:all 0.2s linear;}
+.filelistname a:hover{color: #00B7EE;}
+.deletebutton {display: inline-block;float:right;margin:-10px 30px ;}
+.deletebutton input{background:url(../images/delete_gray.png) no-repeat;width:24px;height:24px;border:0px;cursor:pointer;transition:all 0.2s linear;-webkit-transition:all 0.2s linear;-moz-transition:all 0.2s linear;-o-transition:all 0.2s linear;}
+.deletebutton input:hover{background:url(../images/delete_blue.png) no-repeat;}
+.playbutton{display: inline-block;float:right;margin:-10px 10px ;}
+.playbutton input{background:url(../images/play_gray.png) no-repeat;width:24px;height:24px;border:0px;cursor:pointer;transition:all 0.2s linear;-webkit-transition:all 0.2s linear;-moz-transition:all 0.2s linear;-o-transition:all 0.2s linear;}
+.playbutton input:hover{background:url(../images/play_blue.png) no-repeat;}
+.encodeInfodiv {display: none;float:left;border-top:1px solid #DDD;padding-top:10px;margin-top:10px;}
+.encodeInfodiv p {float: left;color: brown;}
+
+.warndiv{z-index:1010;border:0px;width:200px;height:80px;position:fixed;left:50%;margin-left:-100px;top:50%;margin-top:-40px;display:none;}
+#playEncodeInfoBox{z-index:1010;border:0px;width:662px;height:412px;position:fixed;left:50%;margin-left:-331px;top:50%;margin-top:-206px;display:none;}
+#closeplaywindow{position:absolute;right:0px;width: 24px;height: 24px;border:0px;background:url(../images/close_window_gray.png) no-repeat;cursor:pointer;transition:all 0.2s linear;-webkit-transition:all 0.2s linear;-moz-transition:all 0.2s linear;-o-transition:all 0.2s linear;}
+#closeplaywindow:hover{background:url(../images/close_window_blue.png) no-repeat;}
+#encodeinfotext{position:absolute;bottom:0px;width:650px;height:400px;text-align:center;background:white;}
+.playvideomask {width: 100%;height: 100%;z-index: 999;background: #000;position: fixed;top: 0;left: 0;display: none;}
+#warningdiv{color:#ddd;font-size: 16px;text-align:center;}
+.holder {display:inline;}
+.holder a{display:inline;padding: 6px 12px; margin:0px 2px; color: #00A2D4;background-color: #fff;border: 1px solid #ddd;cursor:pointer;transition:all 0.1s linear;}
+.holder a.jp-current {color: #fff;background-color: #00A2D4;border: 1px solid #00A2D4;cursor: default;}
+.holder a.jp-disabled{color: #999;background-color: #fff;border-color: #ddd;cursor: default;}
+.holder a.jp-current:hover{background-color: #00A2D4;color: #fff;} 
+.holder a.jp-disabled:hover{background-color: #fff;color: #999;}
+.holder a:hover {background-color:#00B7EE;color:#fff;}
+
+
+
+
+
+
+
+
+
+
+
+
+

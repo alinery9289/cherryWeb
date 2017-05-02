@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>{% block title %}DEFAULT{% endblock %} - MEDIALAB</title>
+	<link rel="shortcut icon" href="static/images/favicon.ico" type="images/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+	<link rel="stylesheet" type="text/css" href="static/css/login.css" />
+	<script type="text/javascript" src="static/script/jquery.min.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="static/script/jquery.easing.min.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="static/script/loginmodule.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="static/script/login.js"  charset="utf-8"></script>
+	{% block css %} {% endblock %}
+</head>
+<body>
+<div id="header">
+  <div> 
+  	<div class="leadinglist fl" >
+  		<ul> 
+  			<li>{% block nav_transcode %}<a href="/" style="">transcode</a>{% endblock %}</li>
+  			<li>{% block nav_filelist %}<a href="/filelist" style="">filelist</a>{% endblock %}</li>
+		</ul>
+  	</div>
+    <div class="login fr" id="loginregdiv" style="display:inline;">
+      <div class="loginmenu"><a title="Login or Register"></a></div>
+      <ul>
+        <li class="openlogin"><a href="" onclick="return false;">Login</a></li>
+        <li class="reg"><a href="" onclick="return false;">Register</a></li>
+      </ul>
+    </div>   
+    <div class="login fr" id="logineddiv" style="display:none;">
+    	<div id="logineduserdiv" style="float:left" ></div>
+    	<div class="logout">&nbsp;&nbsp;<a href="javascript:;" onclick="logout()">Logout</a></div> 
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="loginmask"></div>
+<div id="loginalert">
+  <div class="pd20 loginpd">
+    <h3><i class="closealert fr"></i>
+    </h3>
+    <div class="loginwrap">
+      <div class="loginh">
+        <div class="fl">Login</div>
+        <div class="fr"><a id="sigup_now" href="http://sc.chinaz.com/" onclick="return false;">Register now!</a></div>
+        <div class="clear"></div>
+      </div>
+      <h3><span>User Login</span><span class="login_warning">Username or password is wrong!</span>
+      </h3>
+      <div class="clear"></div>
+      <form  method="post" action="/user" id="login_form" onsubmit="return checkBeforeLogin()">
+        <div class="logininput">
+          <input type="text" name="userid" id="userid" class="loginusername" value="Username" onblur="judgeUserid('userid','useridnotes')"/>
+          <p id="useridnotes"></p><br/>
+          <input type="password" name="password" id="password" class="loginuserpasswordp" style="display:none" onblur="judgePassword('password','passwordnotes')"/>
+          <input type="text" class="loginuserpasswordt" value="Password" /><br/>
+          <div id="passwordnotes"></div>
+        </div>
+        <div class="loginbtn">
+          <div class="loginsubmit fl">
+            <input type="submit"  value="Login" id="login_submitbtn" />
+          </div>
+          <div class="fr"><a id="frgetpw" href="/medialabWebapp/resetPassword.html">Forget your password?</a></div>
+          <div class="clear"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="reg_setp">
+  <div class="back_setp">Back</div>
+  <div class="blogo"><h2>User Registration</h2></div>
+  <div id="setp_quicklogin">
+     <form  method="post" id="reg_form" action="/user/Registration" onsubmit="return checkBeforeReg()">
+        <div class="logininput">
+          <input type="text" name="userid" id="reg_userid" class="reg_username" value="Username" onblur="judgeUserid('reg_userid','reg_useridnotes')"/>
+          <p id="reg_useridnotes"></p><br/>
+          <input type="text" name="email" id="reg_email" class="reg_useremail" value="email used to reset your password" onblur="judgeEmail('reg_email','reg_emailnotes')"/>
+          <p id="reg_emailnotes"></p><br/>
+          <input type="password" name="password" id="reg_password" class="reg_userpasswordp" style="display:none" onblur="judgePassword('reg_password','reg_passwordnotes')"/>
+          <input type="text" class="reg_userpasswordt" value="input your password" /><div id="reg_passwordnotes"></div><br/>
+          <input type="password" name="check_password" id="check_reg_password" class="check_reg_userpasswordp" style="display:none" onblur="checkpassword()"/>
+          <input type="text" class="check_reg_userpasswordt" value="input your password again" /><div id="check_reg_passwordnotes"></div><br/>
+        </div>
+        <div class="loginbtn"  style="position:absolute; left:135px">
+          <div class="loginsubmit fl">
+            <input type="submit" value="Register"  id="reg_submitbtn" />
+          </div>
+          <div class="clear"></div>
+        </div>
+      </form>
+  </div>
+</div>
+<br><br><br>
+{% block content %}
+{% endblock %}
+ 
+</body>
+</html>
