@@ -37,4 +37,6 @@ urlpatterns = [
     url(r'^h264tohevc$', 'cherryManage.views.H264toHevcProc', name='H264toHevcProc'), 
     url(r'^h264tohevc/allinfo/authcode/([a-zA-Z0-9]{32})$', 'cherryManage.views.H264toHevcInfoByAuthProc', name='H264toHevcInfoByAuthProc'),
     url(r'^h264tohevc/info/jobid/([a-zA-Z0-9]{32})$', 'cherryManage.views.H264toHevcInfoProc', name='H264toHevcInfoProc'),
+    
+    url(r'^stats$', 'cherryManage.views.StateProc', name='StateProc')
 ]

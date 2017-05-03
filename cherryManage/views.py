@@ -16,6 +16,7 @@ from datetime import datetime
 from cherry.util.config import conf_dict
 from cherry.util.redistool import redis_get,redis_set, redis_has_key, redis_del
 from cherry.jobs.launch import *
+from django.template.context_processors import request
 
 httpstr = conf_dict['all']['httpstr']
 userftp = conf_dict['all']['userftp']
@@ -295,3 +296,19 @@ def mediaFileInfoByAuthProc(request,authcode):
             return HttpResponse(json.dumps(response_datas), content_type="application/json")
         else : return HttpResponse(json.dumps(response_datas), content_type="application/json")
         
+def StateProc(request):
+    if request.method == 'GET':
+        response_data = {}
+        processed_processlogs = processlog.objects.filter(dealstate='processing')
+        response_data['processing_jobs']= processed_processlogs.count()
+        succeed_processlogs = processlog.objects.filter(dealstate='succeed')
+        response_data['succeed_jobs']= succeed_processlogs.count()
+        failed_processlogs = processlog.objects.filter(dealstate='failed')
+        response_data['failed_jobs']= failed_processlogs.count()
+        processed_tasks = task.objects.filter(dealstate='processing')
+        response_data['processing_tasks']= processed_tasks.count()
+        succeed_tasks = task.objects.filter(dealstate='succeed')
+        response_data['succeed_tasks']= succeed_tasks.count()
+        failed_tasks = task.objects.filter(dealstate='failed')
+        response_data['failed_tasks']= failed_tasks.count()
+        return HttpResponse(json.dumps(response_data), content_type="application/json")
