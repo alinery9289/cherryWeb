@@ -1,7 +1,15 @@
+#setting
+*.gitignore
+*.settings
+.project
+.pydevproject
+*.pyc
+
+
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
-
 # Folder config file
 Desktop.ini
 
